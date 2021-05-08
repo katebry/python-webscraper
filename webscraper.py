@@ -7,4 +7,7 @@ page = requests.get(URL)
 soup = BeautifulSoup(page.content, 'html.parser')
 results = soup.find(id='resultsCol')
 
-print(results)
+job_elems = results.find_all('div', class_='jobsearch-SerpJobCard')
+
+for job_elem in job_elems:
+    print(job_elem, end='\n'*2)
