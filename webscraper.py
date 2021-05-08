@@ -12,4 +12,5 @@ job_elems = results.find_all('div', class_='jobsearch-SerpJobCard')
 for job_elem in job_elems:
     title_elem = job_elem.find('a', class_='jobtitle')
     salary_elem = job_elem.find('span', class_='salaryText')
-    print(title_elem, salary_elem, end='\n'*4)
+    location_elem = job_elem.find('span', class_='location')
+    print(title_elem, salary_elem, location_elem, end='\n'*4)
